@@ -1,0 +1,15 @@
+Cl[Pt@SP1](Cl)([NH3])[NH3]
+Cl[Pt@SP2](Cl)([NH3])[NH3]
+Cl[Pt@SP3](Cl)([NH3])[NH3]
+Cl[Pt@SP1]([NH3])(Cl)[NH3]
+Cl[Pt@SP2]([NH3])(Cl)[NH3]
+Cl[Pt@SP3]([NH3])(Cl)[NH3]
+Cl[Pt@SP1]([NH3])([NH3])Cl
+Cl[Pt@SP2]([NH3])([NH3])Cl
+Cl[Pt@SP3]([NH3])([NH3])Cl
+[NH3][Pt@SP1](Cl)([NH3])Cl
+[NH3][Pt@SP2](Cl)([NH3])Cl
+[NH3][Pt@SP3](Cl)([NH3])Cl
+[NH3][Pt@SP1](Cl)(Cl)[NH3]
+[NH3][Pt@SP2](Cl)(Cl)[NH3]
+[NH3][Pt@SP3](Cl)(Cl)[NH3]
