@@ -61,6 +61,8 @@ and not the InChI canonical numbers.
 
 #### Octahedral
 
+Note: The SMILES depiction will make some bonds longer to try fit in the expanded NO<sub>2</sub> group.
+
 cis/trans- examples:
 
 ![](https://www.simolecule.com/cdkdepict/depict/bow/svg?smi=Cl%5BCo%40OH1%5D%28Cl%29%28Cl%29%28N%28%3DO%29%28%3DO%29%29%28Cl%29N%28%3DO%29%3DO+%2Fma5o1&abbr=on&hdisp=bridgehead&showtitle=true&zoom=1.6&annotate=number)
@@ -127,6 +129,32 @@ fac/mer- examples:
 ![](https://www.simolecule.com/cdkdepict/depict/bow/svg?smi=Cl%5BCo%40OH29%5D%28Cl%29%28N%28%3DO%29%28%3DO%29%29%28N%28%3DO%29%28%3DO%29%29%28Cl%29N%28%3DO%29%3DO+%2Fma4o8&abbr=on&hdisp=bridgehead&showtitle=true&zoom=1.6&annotate=number)
 ![](https://www.simolecule.com/cdkdepict/depict/bow/svg?smi=Cl%5BCo%40OH30%5D%28Cl%29%28N%28%3DO%29%28%3DO%29%29%28N%28%3DO%29%28%3DO%29%29%28Cl%29N%28%3DO%29%3DO+%2Fma4o8&abbr=on&hdisp=bridgehead&showtitle=true&zoom=1.6&annotate=number)
 
+
+#### Trigonal Bipyramidal
+
+When we have 2 and 3 groups in TBPY there are 3 possibilities: two as the axis,
+two equatorial, or one in the axis and one equatorial.
+
+![](https://www.simolecule.com/cdkdepict/depict/bow/svg?smi=Cl%5BAs%40TB1%5D%28Cl%29%28%5BNH3%5D%29%28%5BNH3%5D%29Cl+%2Fma1tb5&abbr=on&hdisp=bridgehead&showtitle=true&zoom=1.6&annotate=number)
+![](https://www.simolecule.com/cdkdepict/depict/bow/svg?smi=Cl%5BAs%40TB2%5D%28Cl%29%28%5BNH3%5D%29%28%5BNH3%5D%29Cl+%2Fma1tb5&abbr=on&hdisp=bridgehead&showtitle=true&zoom=1.6&annotate=number)
+![](https://www.simolecule.com/cdkdepict/depict/bow/svg?smi=Cl%5BAs%40TB3%5D%28Cl%29%28%5BNH3%5D%29%28%5BNH3%5D%29Cl+%2Fma1tb1&abbr=on&hdisp=bridgehead&showtitle=true&zoom=1.6&annotate=number)
+![](https://www.simolecule.com/cdkdepict/depict/bow/svg?smi=Cl%5BAs%40TB4%5D%28Cl%29%28%5BNH3%5D%29%28%5BNH3%5D%29Cl+%2Fma1tb1&abbr=on&hdisp=bridgehead&showtitle=true&zoom=1.6&annotate=number)
+![](https://www.simolecule.com/cdkdepict/depict/bow/svg?smi=Cl%5BAs%40TB5%5D%28Cl%29%28%5BNH3%5D%29%28%5BNH3%5D%29Cl+%2Fma1tb1&abbr=on&hdisp=bridgehead&showtitle=true&zoom=1.6&annotate=number)
+![](https://www.simolecule.com/cdkdepict/depict/bow/svg?smi=Cl%5BAs%40TB6%5D%28Cl%29%28%5BNH3%5D%29%28%5BNH3%5D%29Cl+%2Fma1tb1&abbr=on&hdisp=bridgehead&showtitle=true&zoom=1.6&annotate=number)
+![](https://www.simolecule.com/cdkdepict/depict/bow/svg?smi=Cl%5BAs%40TB7%5D%28Cl%29%28%5BNH3%5D%29%28%5BNH3%5D%29Cl+%2Fma1tb5&abbr=on&hdisp=bridgehead&showtitle=true&zoom=1.6&annotate=number)
+![](https://www.simolecule.com/cdkdepict/depict/bow/svg?smi=Cl%5BAs%40TB8%5D%28Cl%29%28%5BNH3%5D%29%28%5BNH3%5D%29Cl+%2Fma1tb5&abbr=on&hdisp=bridgehead&showtitle=true&zoom=1.6&annotate=number)
+![](https://www.simolecule.com/cdkdepict/depict/bow/svg?smi=Cl%5BAs%40TB9%5D%28Cl%29%28%5BNH3%5D%29%28%5BNH3%5D%29Cl+%2Fma1tb5&abbr=on&hdisp=bridgehead&showtitle=true&zoom=1.6&annotate=number)
+![](https://www.simolecule.com/cdkdepict/depict/bow/svg?smi=Cl%5BAs%40TB10%5D%28Cl%29%28%5BNH3%5D%29%28%5BNH3%5D%29Cl+%2Fma1tb1&abbr=on&hdisp=bridgehead&showtitle=true&zoom=1.6&annotate=number)
+![](https://www.simolecule.com/cdkdepict/depict/bow/svg?smi=Cl%5BAs%40TB11%5D%28Cl%29%28%5BNH3%5D%29%28%5BNH3%5D%29Cl+%2Fma1tb5&abbr=on&hdisp=bridgehead&showtitle=true&zoom=1.6&annotate=number)
+![](https://www.simolecule.com/cdkdepict/depict/bow/svg?smi=Cl%5BAs%40TB12%5D%28Cl%29%28%5BNH3%5D%29%28%5BNH3%5D%29Cl+%2Fma1tb1&abbr=on&hdisp=bridgehead&showtitle=true&zoom=1.6&annotate=number)
+![](https://www.simolecule.com/cdkdepict/depict/bow/svg?smi=Cl%5BAs%40TB13%5D%28Cl%29%28%5BNH3%5D%29%28%5BNH3%5D%29Cl+%2Fma1tb1&abbr=on&hdisp=bridgehead&showtitle=true&zoom=1.6&annotate=number)
+![](https://www.simolecule.com/cdkdepict/depict/bow/svg?smi=Cl%5BAs%40TB14%5D%28Cl%29%28%5BNH3%5D%29%28%5BNH3%5D%29Cl+%2Fma1tb1&abbr=on&hdisp=bridgehead&showtitle=true&zoom=1.6&annotate=number)
+![](https://www.simolecule.com/cdkdepict/depict/bow/svg?smi=Cl%5BAs%40TB15%5D%28Cl%29%28%5BNH3%5D%29%28%5BNH3%5D%29Cl+%2Fma1tb1&abbr=on&hdisp=bridgehead&showtitle=true&zoom=1.6&annotate=number)
+![](https://www.simolecule.com/cdkdepict/depict/bow/svg?smi=Cl%5BAs%40TB16%5D%28Cl%29%28%5BNH3%5D%29%28%5BNH3%5D%29Cl+%2Fma1tb17&abbr=on&hdisp=bridgehead&showtitle=true&zoom=1.6&annotate=number)
+![](https://www.simolecule.com/cdkdepict/depict/bow/svg?smi=Cl%5BAs%40TB17%5D%28Cl%29%28%5BNH3%5D%29%28%5BNH3%5D%29Cl+%2Fma1tb1&abbr=on&hdisp=bridgehead&showtitle=true&zoom=1.6&annotate=number)
+![](https://www.simolecule.com/cdkdepict/depict/bow/svg?smi=Cl%5BAs%40TB18%5D%28Cl%29%28%5BNH3%5D%29%28%5BNH3%5D%29Cl+%2Fma1tb1&abbr=on&hdisp=bridgehead&showtitle=true&zoom=1.6&annotate=number)
+![](https://www.simolecule.com/cdkdepict/depict/bow/svg?smi=Cl%5BAs%40TB19%5D%28Cl%29%28%5BNH3%5D%29%28%5BNH3%5D%29Cl+%2Fma1tb17&abbr=on&hdisp=bridgehead&showtitle=true&zoom=1.6&annotate=number)
+![](https://www.simolecule.com/cdkdepict/depict/bow/svg?smi=Cl%5BAs%40TB20%5D%28Cl%29%28%5BNH3%5D%29%28%5BNH3%5D%29Cl+%2Fma1tb1&abbr=on&hdisp=bridgehead&showtitle=true&zoom=1.6&annotate=number)
 
 ### Usage
 
