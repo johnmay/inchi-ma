@@ -157,8 +157,7 @@ two equatorial, or one in the axis and one equatorial.
 
 ### Usage
 
-A command line application is provided that can provide InChIs for a SMILES or
-3D SDfile:
+A command line application is provided (download: [inchi-ma.jar](https://github.com/johnmay/inchi-ma/releases/latest)) that can provide InChIs for a SMILES or 3D SDfile:
 
 ```
 $ java -jar inchi-ma.jar input.smi
