@@ -1,6 +1,6 @@
 # InChI Metal Architecture
 
-Proof of concept to generate InChI's that distinguish structures with different
+Proof of concept to generate InChIs that distinguish structures with different
 Square Planar, Trigonal Bipyramidal, and Octahedral configurations.
 
 It adds a '/ma' (metal architecture) layer as proposed by Jonathan Goodman to
