@@ -1,4 +1,4 @@
-# InChI Configuration Index
+# InChI Metal Architecture
 
 Proof of concept to generate InChI's that distinguish structures with different
 Square Planar, Trigonal Bipyramidal, and Octahedral configurations.
@@ -15,20 +15,20 @@ geometries are not necessarily chiral.
 
 The order specifies a permutation index and uses the same coding
 scheme as SMILES (see. [relevant blog post](http://timvdm.blogspot.com/2010/09/smiles-stereochemistry-enigma.html)).
-We need to be able to specify any order of the neighbors around the central (or
-'focus') atom.
 
-To specify any ordering for octahedral we have 6 neighbors so there are 720
-(6 factorial) possible ways to order them. However there are 24 symmetries
-and so we only need 720/24 = 30 possible orders. For trigonal bipyramidal, 120
-(i.e. 5 factorial) ways to order but 6 symmetries, 120/5 = 20 possible orders.
+We need to be able to specify any order of the neighbors around the central (or
+'focus') atom. To specify any ordering for octahedral we have 6 neighbors so
+there are 720 (6 factorial) possible ways to order them. However there are 24
+symmetries and so we only need 720/24 = 30 possible orders. For trigonal
+bipyramidal, 120 (i.e. 5 factorial) ways to order but 6 symmetries, 120/5 = 20
+possible orders.
 
 For each of these geometry we use a table to look up the
 ordering we have ended up with from the canonical labelling. When there are
 symmetries within the neighbors we choose the lowest possible ordering.
-Currently such symmetries are broken by enumeration but in practice a backtracking
-canonical labelling algorithm (such as that used by the InChI) can take care of
-this step.
+Currently such symmetries are broken by enumeration but in practice a
+backtracking canonical labelling algorithm (such as that used by the InChI) can
+take care of this step.
 
 ### Examples
 
