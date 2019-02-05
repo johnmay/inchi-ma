@@ -40,7 +40,8 @@ and *trans-platin*. As shown below the ``/ma`` layer divides the possibilities
 with ``/ma5sp1`` corresponding to *cis-*, and ``/ma5sp2`` to *trans-*.
 
 Note the numbers here refer to the input atom order in the SMILES (see
-``examples/platin.smi``) and not the InChI canonical numbers.
+[``examples/platin.smi``](https://github.com/johnmay/inchi-ma/blob/master/examples/platin.smi))
+and not the InChI canonical numbers.
 
 ![](https://www.simolecule.com/cdkdepict/depict/bow/svg?smi=Cl%5BPt%40SP1%5D%28Cl%29%28%5BNH3%5D%29%5BNH3%5D+%2Fma5sp1&abbr=on&hdisp=bridgehead&showtitle=true&zoom=1.6&annotate=number)
 ![](https://www.simolecule.com/cdkdepict/depict/bow/svg?smi=Cl%5BPt%40SP2%5D%28Cl%29%28%5BNH3%5D%29%5BNH3%5D+%2Fma5sp2&abbr=on&hdisp=bridgehead&showtitle=true&zoom=1.6&annotate=number)
@@ -144,3 +145,12 @@ Currently only constitutionally different neighbors are handled. The system used
 can be used to encode geometries such as lambda/delta Fe(ox<sub>3</sub>) if
 there was tighter integration with the main canonically labelling algorithm.
 
+### Building
+
+The project is built with [Apache Maven](https://maven.apache.org/).
+
+```
+$ mvn install
+```
+
+will generate the file ``target/inchi-ma.jar``.
