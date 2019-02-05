@@ -10,24 +10,24 @@ the end of an InChI. Currently the following geometries are supported:
 * Trigonal Bipyramidal: ``/ma<atom>tb<order>`` where order is 1-20
 * Octahedral: ``/ma<atom>o<order>`` where order is 1-30
 
-Daylight used the term 'chiral order', I prefer simply 'order' as these
+Daylight used the term 'chiral order', I prefer 'order' as these
 geometries are not necessarily chiral.
 
 The order specifies a permutation index and uses the same coding
 scheme as SMILES (see. [relevant blog post](http://timvdm.blogspot.com/2010/09/smiles-stereochemistry-enigma.html)).
-It works because we need to be able to specify any order of the neighbors around the central (or
-'focus') atom. To specify any ordering for octahedral we have 6 neighbors so
-there are 720 (6 factorial) possible ways to order them. However there are 24
-symmetries and so we only need 720/24 = 30 possible orders. For trigonal
-bipyramidal, 120 (i.e. 5 factorial) ways to order but 6 symmetries, 120/5 = 20
-possible orders.
+It works because we need to be able to specify any order of the neighbors around
+the central (or 'focus') atom. To specify any ordering for octahedral we have 6 
+neighbors so there are 720 (6 factorial) possible ways to order them. However 
+there are 24 symmetries and so we only need 720/24 = 30 possible orders. For 
+trigonal bipyramidal, 120 (i.e. 5 factorial) ways to order but 6 symmetries, 
+120/5 = 20 possible orders.
 
-For each of these geometry we use a table to look up the
-ordering we have ended up with from the canonical labelling. When there are
-symmetries within the neighbors we choose the lowest possible ordering.
-Currently such symmetries are broken by enumeration but in practice a
-backtracking canonical labelling algorithm (such as that used by the InChI) can
-take care of this step.
+For each of these geometries we use a table to look up the
+ordering we have ended up with from the InChI atom numbers (parsed from the 
+AuxInfo). When there are symmetries within the neighbors we choose the lowest
+possible ordering. Currently such symmetries are broken by re-enumeration but in
+practice a backtracking canonical labelling algorithm (such as that used by the
+InChI) can take care of this step.
 
 ### Examples
 
@@ -157,10 +157,11 @@ two equatorial, or one in the axis and one equatorial.
 
 ### Usage
 
-A command line application is provided (download: [inchi-ma.jar](https://github.com/johnmay/inchi-ma/releases/latest)) that can provide InChIs for a SMILES or 3D SDfile:
+A command line application is provided (available: [inchi-ma.jar](https://github.com/johnmay/inchi-ma/releases/latest)) that can provide InChIs with an ``/ma`` layer for a SMILES or 3D SDfile:
 
 ```
 $ java -jar inchi-ma.jar input.smi
+$ java -jar inchi-ma.jar input.sdf
 ```
 
 Some example inputs are provided in the ``examples/`` directory.
@@ -168,8 +169,8 @@ Some example inputs are provided in the ``examples/`` directory.
 ### Limitations
 
 Currently only constitutionally different neighbors are handled. The system used
-can be used to encode geometries such as lambda/delta Fe(ox<sub>3</sub>) if
-there was tighter integration with the main canonically labelling algorithm.
+here can also be used to encode geometries such as lambda/delta Fe(ox<sub>3</sub>)
+if there was tighter integration within the canonically labelling procedure.
 
 ### Building
 

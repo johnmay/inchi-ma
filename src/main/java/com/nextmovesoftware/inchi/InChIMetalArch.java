@@ -7,6 +7,7 @@
 package com.nextmovesoftware.inchi;
 
 import com.google.common.collect.FluentIterable;
+import net.sf.jniinchi.INCHI_OPTION;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.exception.InvalidSmilesException;
 import org.openscience.cdk.graph.GraphUtil;
@@ -25,6 +26,7 @@ import org.openscience.cdk.stereo.SquarePlanar;
 import org.openscience.cdk.stereo.TrigonalBipyramidal;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -135,9 +137,9 @@ public final class InChIMetalArch {
     return findByBacktrack(table, perm, 100);
   }
 
-  public static String toInChI(IAtomContainer mol) {
+  public static String toInChI(IAtomContainer mol, List<INCHI_OPTION> opts) {
     try {
-      InChIGenerator inchigen = inchifact.getInChIGenerator(mol, "");
+      InChIGenerator inchigen = inchifact.getInChIGenerator(mol, opts);
       String         inchi    = inchigen.getInchi();
       String         auxinfo  = inchigen.getAuxInfo();
 
@@ -208,9 +210,9 @@ public final class InChIMetalArch {
     }
   }
 
-  public static String toInChI(String smi) {
+  public static String toInChI(String smi, List<INCHI_OPTION> opts) {
     try {
-      return toInChI(smipar.parseSmiles(smi));
+      return toInChI(smipar.parseSmiles(smi), opts);
     } catch (InvalidSmilesException e) {
       System.err.println("ERROR: Bad SMILES " + e.getMessage());
       return null;

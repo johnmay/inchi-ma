@@ -6,6 +6,7 @@
 
 package com.nextmovesoftware.inchi;
 
+import net.sf.jniinchi.INCHI_OPTION;
 import org.openscience.cdk.exception.InvalidSmilesException;
 import org.openscience.cdk.geometry.GeometryUtil;
 import org.openscience.cdk.interfaces.IAtomContainer;
@@ -27,6 +28,8 @@ import java.io.OutputStreamWriter;
 import java.io.Reader;
 import java.io.Writer;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 public class Main {
@@ -34,11 +37,12 @@ public class Main {
   private static final IChemObjectBuilder builder = SilentChemObjectBuilder.getInstance();
   private static final SmilesParser       smipar  = new SmilesParser(builder);
 
-  private static final int          SMIFMT = 1;
-  private static final int          SDFFMT = 2;
-  private static       InputStream  in;
-  private static       OutputStream out;
-  private static       int          fmt    = SMIFMT;
+  private static final int                SMIFMT  = 1;
+  private static final int                SDFFMT  = 2;
+  private static       InputStream        in;
+  private static       OutputStream       out;
+  private static       int                fmt     = SMIFMT;
+  private static       List<INCHI_OPTION> options = new ArrayList<>();
 
   private static int determineFormat(String val) {
     switch (val.toLowerCase(Locale.ROOT)) {
@@ -60,7 +64,7 @@ public class Main {
 
   private static int determineFormatFromFilename(String fname) {
     int idx = fname.lastIndexOf('.');
-    return determineFormat(fname.substring(idx+1));
+    return determineFormat(fname.substring(idx + 1));
   }
 
   private static boolean processCommandLine(String[] args) {
@@ -77,33 +81,38 @@ public class Main {
           return false;
         }
         fmt = determineFormat(val);
-      }
-      switch (j++) {
-        case 0:
-          if (args[i].equals("-"))
-            in = System.in;
-          else {
-            try {
-              in = new FileInputStream(args[i]);
-            } catch (FileNotFoundException ex) {
-              System.err.println("File not found: " + args[i]);
-              return false;
+      } else if (args[i].equals("-RecMet")) {
+        options.add(INCHI_OPTION.RecMet);
+      } else if (args[i].equals("-FixedH")) {
+        options.add(INCHI_OPTION.FixedH);
+      } else {
+        switch (j++) {
+          case 0:
+            if (args[i].equals("-"))
+              in = System.in;
+            else {
+              try {
+                in = new FileInputStream(args[i]);
+              } catch (FileNotFoundException ex) {
+                System.err.println("File not found: " + args[i]);
+                return false;
+              }
+              fmt = determineFormatFromFilename(args[i]);
             }
-            fmt = determineFormatFromFilename(args[i]);
-          }
-          break;
-        case 1:
-          if (args[i].equals("-"))
-            out = System.out;
-          else {
-            try {
-              out = new FileOutputStream(args[i]);
-            } catch (FileNotFoundException ex) {
-              System.err.println("File not found: " + args[i]);
-              return false;
+            break;
+          case 1:
+            if (args[i].equals("-"))
+              out = System.out;
+            else {
+              try {
+                out = new FileOutputStream(args[i]);
+              } catch (FileNotFoundException ex) {
+                System.err.println("File not found: " + args[i]);
+                return false;
+              }
             }
-          }
-          break;
+            break;
+        }
       }
     }
     if (out == null)
@@ -115,7 +124,7 @@ public class Main {
     System.err.println("Copyright (c) 2019 NextMove Software");
     System.err.println("InChI Metal Arch\n");
     System.err.println("Usage:");
-    System.err.println("  java -jar inchi-ma.jar [-fmt {SMI|SDF}] <infile> [<outfile>]\n");
+    System.err.println("  java -jar inchi-ma.jar [-fmt {SMI|SDF} -RecMet -FixedH] <infile> [<outfile>]\n");
     System.err.println("Examples:");
     System.err.println(" Processing a file of SMILES or SDfile");
     System.err.println("   java -jar inchi-ma.jar <input.smi>");
@@ -133,7 +142,7 @@ public class Main {
     while ((line = brdr.readLine()) != null) {
       try {
         IAtomContainer mol   = smipar.parseSmiles(line);
-        String         inchi = InChIMetalArch.toInChI(mol);
+        String         inchi = InChIMetalArch.toInChI(mol, options);
         if (inchi != null)
           wtr.write(inchi);
         if (mol.getTitle() != null) {
@@ -159,7 +168,7 @@ public class Main {
 
       PerceiveFrom3d.perceive(mol);
 
-      String  inchi = InChIMetalArch.toInChI(mol);
+      String inchi = InChIMetalArch.toInChI(mol, options);
       if (inchi != null)
         wtr.write(inchi);
       if (mol.getTitle() != null) {

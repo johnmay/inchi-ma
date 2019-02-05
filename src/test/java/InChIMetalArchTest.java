@@ -5,14 +5,20 @@
  */
 
 import com.nextmovesoftware.inchi.InChIMetalArch;
+import net.sf.jniinchi.INCHI_OPTION;
 import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.net.URLEncoder;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class InChIMetalArchTest {
+
+  private final List<INCHI_OPTION> EMPTY_OPTS = Collections.emptyList();
 
   @Test
   public void cisTransPlatin() {
@@ -21,7 +27,7 @@ public class InChIMetalArchTest {
     // one cis- and one trans-
     for (int i = 1; i <= 3; i++) {
       String smi = "Cl[Pt@SP" + i + "](Cl)([NH3])[NH3]";
-      inchis.add(InChIMetalArch.toInChI(smi));
+      inchis.add(InChIMetalArch.toInChI(smi, EMPTY_OPTS));
     }
     Assert.assertThat(inchis.size(), CoreMatchers.is(2));
   }
@@ -32,7 +38,7 @@ public class InChIMetalArchTest {
     // generate the 4 possible configurations in the shape of U, Z, or 4
     for (int i = 1; i <= 30; i++) {
       String smi = "Cl[Co@OH" + i + "](Cl)(Cl)(N(=O)(=O))(Cl)N(=O)=O";
-      inchis.add(InChIMetalArch.toInChI(smi));
+      inchis.add(InChIMetalArch.toInChI(smi, EMPTY_OPTS));
     }
     Assert.assertThat(inchis.size(), CoreMatchers.is(2));
   }
@@ -44,7 +50,7 @@ public class InChIMetalArchTest {
     // one fac- and one mer-
     for (int i = 1; i <= 30; i++) {
       String smi = "Cl[Co@OH" + i + "](Cl)(Cl)(N(=O)(=O))(N(=O)=O)N(=O)=O";
-      inchis.add(InChIMetalArch.toInChI(smi));
+      inchis.add(InChIMetalArch.toInChI(smi, EMPTY_OPTS));
     }
     Assert.assertThat(inchis.size(), CoreMatchers.is(2));
   }
@@ -56,7 +62,7 @@ public class InChIMetalArchTest {
     // generate the 20 possible configurations
     for (int i = 1; i <= 20; i++) {
       String smi = "N[Co@TB" + i + "](Cl)(Cl)(Cl)N";
-      inchis.add(InChIMetalArch.toInChI(smi));
+      inchis.add(InChIMetalArch.toInChI(smi, EMPTY_OPTS));
     }
     Assert.assertThat(inchis.size(), CoreMatchers.is(3));
   }
