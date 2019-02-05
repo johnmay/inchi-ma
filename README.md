@@ -15,8 +15,7 @@ geometries are not necessarily chiral.
 
 The order specifies a permutation index and uses the same coding
 scheme as SMILES (see. [relevant blog post](http://timvdm.blogspot.com/2010/09/smiles-stereochemistry-enigma.html)).
-
-We need to be able to specify any order of the neighbors around the central (or
+It works because we need to be able to specify any order of the neighbors around the central (or
 'focus') atom. To specify any ordering for octahedral we have 6 neighbors so
 there are 720 (6 factorial) possible ways to order them. However there are 24
 symmetries and so we only need 720/24 = 30 possible orders. For trigonal
